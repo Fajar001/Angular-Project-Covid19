@@ -1,0 +1,33 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Striped Table with Hover</h4>
+                        <p class="category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="content">
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                            <div class="ui-md-12">
+                                <div class="ui-inputgroup">
+                                    <span class="ui-inputgroup-addon"><i class="pe-7s-users" style="line-height: 1.25;"></i></span>
+                                    <input type="text" pInputText placeholder="Username" >         
+                                </div>
+                            </div>
+                            <div class="ui-md-12">
+                                <div class="ui-inputgroup">
+                                    <span class="ui-inputgroup-addon"><i class="pe-7s-unlock" style="line-height: 1.25;"></i></span>
+                                    <input type="password" pInputText placeholder="Password" >         
+                                </div>
+                            </div>
+                            <div class="ui-md-12">
+                                <button pButton type="button" label="Secondary" class="ui-button-raised ui-button-secondary"></button>                        
+                            </div>
+                        </form>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
