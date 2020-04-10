@@ -11,16 +11,27 @@
                           <table class="table table-hover table-striped">
                                 <thead style="text-align: center;">
                                     <tr>
-                                        <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
+                                        <!-- <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th> -->
+                                        <th>City</th>
+                                        <th>Case</th>
+                                        <th>Death</th>
+                                        <th>Recovered</th>
                                         <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let row of tableData1.dataRows">
-                                        <td *ngFor="let cell of row">{{cell}}</td>
-                                        <button pButton type="button" label="Update" class="ui-button-rounded ui-button-warning" ></button>
-                                        &nbsp;&nbsp;
-                                        <button pButton type="button" label="Delete" class="ui-button-rounded ui-button-danger" ></button>
+                                    <!-- <tr *ngFor="let row of tableData1.dataRows"> -->
+                                    <tr *ngFor="let covid of covids | async">
+                                        <!-- <td *ngFor="let cell of row">{{cell}}</td> -->
+                                        <td>{{covid.cityName}}</td>
+                                        <td>{{covid.caseByCity}}</td>
+                                        <td>{{covid.deathsByCity}}</td>
+                                        <td>{{covid.recovered}}</td>
+                                        <td>
+                                            <button pButton type="button" label="Update" class="ui-button-rounded ui-button-warning" ></button>
+                                            &nbsp;&nbsp;
+                                            <button pButton type="button" label="Delete" class="ui-button-rounded ui-button-danger" ></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                           </table>

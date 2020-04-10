@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Covid } from './covid';
+import { CovidService } from './covid.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-covid',
@@ -7,21 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CovidComponent implements OnInit {
 
-  //pemanggilan model
+  covid: Covid = new Covid();
   submitted =false;
-  constructor() { }
+
+  constructor(private covidService: CovidService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
   newCovid(){
     this.submitted=false;
-    //this.model = new Model()
+    this.covid = new Covid();
   }
 
   insert(){
-    //this.nama_servoce.createCovid(this.model).subscribe(data=>console.log(data), error=>console.log(error))
-    //this.model
+    this.covidService.getInsert(this.covid).subscribe(data=>console.log(data), error=>console.log(error));
+    this.covid = new Covid();
     this.gotoList()
   }
 
@@ -31,6 +35,6 @@ export class CovidComponent implements OnInit {
   }
 
   gotoList(){
-    // this.router.navigate(['/model'])
+    this.router.navigate(['/table'])
   }
 }

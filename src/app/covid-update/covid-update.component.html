@@ -1,1 +1,45 @@
-<p>covid-update works!</p>
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Striped Table with Hover</h4>
+                        <p class="category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="content">
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="ui-md-12">
+                                <div class="ui-inputgroup">
+                                    <span class="ui-inputgroup-addon"><i class="pe-7s-map-2" style="line-height: 1.25;"></i></span>
+                                    <input type="text" pInputText placeholder="City Name" id="cityName" required [(ngModel)]="covid.cityName">         
+                                </div>
+                            </div>
+                            <div class="ui-md-12">
+                                <div class="ui-inputgroup">
+                                    <span class="ui-inputgroup-addon"><i class="pe-7s-note2" style="line-height: 1.25;"></i></span>
+                                    <input type="number" pInputText placeholder="Case By City" id="caseByCity" required [(ngModel)]="covid.caseByCity">         
+                                </div>
+                            </div>
+                            <div class="ui-md-12">
+                                <div class="ui-inputgroup">
+                                    <span class="ui-inputgroup-addon"><i class="pe-7s-attention" style="line-height: 1.25;"></i></span>
+                                    <input type="number" pInputText placeholder="Case By Death City" id="deathsByCity" required [(ngModel)]="covid.deathsByCity">         
+                                </div>
+                            </div>
+                            <div class="ui-md-12">
+                                <div class="ui-inputgroup">
+                                    <span class="ui-inputgroup-addon"><i class="pe-7s-like" style="line-height: 1.25;"></i></span>
+                                    <input type="number" pInputText placeholder="Recovered" id="recovered" required [(ngModel)]="covid.recovered">         
+                                </div>
+                            </div>
+                            <div class="ui-md-12">
+                                <button pButton type="button" label="Submit" class="ui-button-rounded" ></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

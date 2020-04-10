@@ -8,29 +8,29 @@
                         <p class="category">Here is a subtitle for this table</p>
                     </div>
                     <div class="content">
-                        <form>
+                        <form (ngSubmit)="onSubmit()">
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-map-2" style="line-height: 1.25;"></i></span>
-                                    <input type="text" pInputText placeholder="City Name" >         
+                                    <input type="text" pInputText placeholder="City Name" id="cityName" required [(ngModel)]="covid.cityName" name="cityName">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-note2" style="line-height: 1.25;"></i></span>
-                                    <input type="number" pInputText placeholder="Case By City" >         
+                                    <input type="number" pInputText placeholder="Case By City" id="caseByCity" required [(ngModel)]="covid.caseByCity" name="caseByCity">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-attention" style="line-height: 1.25;"></i></span>
-                                    <input type="number" pInputText placeholder="Case By Death City" >         
+                                    <input type="number" pInputText placeholder="Case By Death City" id="deathsByCity" required [(ngModel)]="covid.deathsByCity" name="deathsByCity">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-like" style="line-height: 1.25;"></i></span>
-                                    <input type="number" pInputText placeholder="Recovered">         
+                                    <input type="number" pInputText placeholder="Recovered" id="recovered" required [(ngModel)]="covid.recovered"name="recovered">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
