@@ -12,7 +12,8 @@ import { LoginComponent } from '../../login/login.component';
 import { CovidComponent  } from '../../covid/covid.component';
 import { CovidUpdateComponent } from '../../covid-update/covid-update.component'
 
-export const AdminLayoutRoutes: Routes = [
+
+export const UserLayoutRoutes: Routes = [
     { path: 'dashboard',      component: HomeComponent },
     // { path: 'user',           component: UserComponent },
     { path: 'table',          component: TablesComponent },
@@ -22,6 +23,6 @@ export const AdminLayoutRoutes: Routes = [
     // { path: 'notifications',  component: NotificationsComponent },
     // { path: 'upgrade',        component: UpgradeComponent },
     { path: 'login',          component: LoginComponent },
-    { path: 'covid',          component: CovidComponent },
-    { path: 'covid-update',   component: CovidUpdateComponent },
+    // { path: 'covid',          component: CovidComponent },
+    // { path: 'covid-update',   component: CovidUpdateComponent },
 ];

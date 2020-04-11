@@ -4,37 +4,38 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Update Table</h4>
+                        <p class="category">Update data covid</p>
                     </div>
                     <div class="content">
-                        <form (ngSubmit)="onSubmit()">
+                        <form>
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-map-2" style="line-height: 1.25;"></i></span>
-                                    <input type="text" pInputText placeholder="City Name" id="cityName" required [(ngModel)]="covid.cityName">         
+                                    <input type="hidden" pInputText placeholder="City Name" id="idCovidCity" required [(ngModel)]="pil.idCovidCity" name="idCovidCity">
+                                    <input type="text" pInputText placeholder="City Name" id="cityName" required [(ngModel)]="pil.cityName" name="cityName">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-note2" style="line-height: 1.25;"></i></span>
-                                    <input type="number" pInputText placeholder="Case By City" id="caseByCity" required [(ngModel)]="covid.caseByCity">         
+                                    <input type="number" pInputText placeholder="Case By City" id="caseByCity" required [(ngModel)]="pil.caseByCity" name="caseByCity">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-attention" style="line-height: 1.25;"></i></span>
-                                    <input type="number" pInputText placeholder="Case By Death City" id="deathsByCity" required [(ngModel)]="covid.deathsByCity">         
+                                    <input type="number" pInputText placeholder="Case By Death City" id="deathsByCity" required [(ngModel)]="pil.deathsByCity" name="deathsByCity">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-like" style="line-height: 1.25;"></i></span>
-                                    <input type="number" pInputText placeholder="Recovered" id="recovered" required [(ngModel)]="covid.recovered">         
+                                    <input type="number" pInputText placeholder="Recovered" id="recovered" required [(ngModel)]="pil.recovered"name="recovered">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
-                                <button pButton type="button" label="Submit" class="ui-button-rounded" ></button>
+                                <button pButton type="button" label="Submit" class="ui-button-rounded" (click)="updateCov(pil)" ></button>
                             </div>
                         </form>
                     </div>

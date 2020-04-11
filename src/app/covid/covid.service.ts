@@ -2,32 +2,41 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'
 import { retry } from 'rxjs/operators';
+import { Covid } from './covid'
 
 @Injectable({
   providedIn: 'root'
 })
 export class CovidService {
-  private baseUrl='http://d0060aac.ngrok.io/show'
+  private baseUrl='http://6a30f855.ngrok.io/'
 
   constructor(private http: HttpClient) { }
 
-  // getCovid(idCovidCity:number): Observable<any>{
-  //   return this.http.get('${this.baseUrl/${idCovidCity}');
-  // }
+  public getCovid(idCovidCity:number): Observable<any>{
+    return this.http.get(this.baseUrl+ "city/show/" + idCovidCity);
+  }
 
-  getList():Observable<any>{
-    return this.http.get('{this.baseUrl}');
+  public getList():Observable<any>{
+    return this.http.get(this.baseUrl + "city/show");
   }
   
-  getInsert(covid: Object): Observable<Object>{
-    return this.http.post('${this.baseUrl}', covid);
+  public getInsert(covid: Object): Observable<Object>{
+    return this.http.post(this.baseUrl+"city/insert", covid);
   }
 
-  getUpdate(idCovidCity:number, value:any): Observable<Object>{
-    return this.http.post('${this.baseUrl}/$idCovidCity', value);
+  public getUpdate(idCovidCity:number, cityName:string, caseByCity:number, deathsByCity:number, recovered:number): Observable<Object>{
+    return this.http.post(this.baseUrl+"city/update"+ "/"+ idCovidCity+ "/"+cityName+ "/"+caseByCity+ "/"+deathsByCity+ "/"+recovered, {responseType: 'text'});
   }
 
-  getDelete(idCovidCity:number): Observable<Object>{
-    return this.http.post('${this.baseUrl}/${idCovidCity}', {responseType: 'text'});
+  public getDelete(idCovidCity:number): Observable<Object>{
+    return this.http.post(this.baseUrl+"city/deleteId/" +idCovidCity, {responseType: 'text'});
+  }
+
+  public getfindAllTotal():Observable<any>{
+    return this.http.get(this.baseUrl+ "city/show/all");
+  }
+
+  public getUser(username:string): Observable<any>{
+    return this.http.get(this.baseUrl+ "login/show/username"+ username);
   }
 }

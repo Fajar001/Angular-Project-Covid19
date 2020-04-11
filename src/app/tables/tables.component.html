@@ -6,6 +6,13 @@
                     <div class="header">
                         <h4 class="title">Striped Table with Hover</h4>
                         <p class="category">Here is a subtitle for this table</p>
+                        <div class="category" *ngFor="let list of listTotal | async">
+                            <!-- <p ([ngModel])=insertList()></p> -->
+                            <p>Total Case &emsp; : {{ list.Total_cases }} </p>
+                            <p>Total Death &emsp; : {{ list.Total_deaths }} </p>
+                            <p>Total Recovered  : {{ list.Total_Recovered }} </p>
+                        </div>
+                        
                     </div>
                     <div class="content table-responsive table-full-width">
                           <table class="table table-hover table-striped">
@@ -28,9 +35,9 @@
                                         <td>{{covid.deathsByCity}}</td>
                                         <td>{{covid.recovered}}</td>
                                         <td>
-                                            <button pButton type="button" label="Update" class="ui-button-rounded ui-button-warning" ></button>
+                                            <button pButton type="button" label="Update" class="ui-button-rounded ui-button-warning" (click)="updateCovid(covid.idCovidCity)" ></button>
                                             &nbsp;&nbsp;
-                                            <button pButton type="button" label="Delete" class="ui-button-rounded ui-button-danger" ></button>
+                                            <button pButton type="button" label="Delete" class="ui-button-rounded ui-button-danger" (click)="deleteCovid(covid.idCovidCity)"></button>
                                         </td>
                                     </tr>
                                 </tbody>

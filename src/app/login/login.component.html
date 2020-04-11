@@ -12,17 +12,17 @@
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-users" style="line-height: 1.25;"></i></span>
-                                    <input type="text" pInputText placeholder="Username" >         
+                                    <input type="text" pInputText placeholder="Username" ([ngModel])="Login.username">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
                                 <div class="ui-inputgroup">
                                     <span class="ui-inputgroup-addon"><i class="pe-7s-unlock" style="line-height: 1.25;"></i></span>
-                                    <input type="password" pInputText placeholder="Password" >         
+                                    <input type="password" pInputText placeholder="Password" ([ngModel])="Login.password">         
                                 </div>
                             </div>
                             <div class="ui-md-12">
-                                <button pButton type="button" label="Secondary" class="ui-button-raised ui-button-secondary"></button>                        
+                                <button pButton type="button" label="Secondary" class="ui-button-raised ui-button-secondary" (click)="confirm()"></button>                        
                             </div>
                         </form>    
                     </div>

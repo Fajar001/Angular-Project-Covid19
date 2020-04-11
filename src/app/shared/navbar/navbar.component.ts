@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../../auth/auth.service';
+// import { AuthService } from '../../auth/auth.service';
 
 @Component({
     // moduleId: module.id,
@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit{
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location,  private element: ElementRef, private authService: AuthService) {
+    constructor(location: Location,  private element: ElementRef) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit{
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
-      this.isLoggedIn$ = this.authService.isLoggedIn;
+    //   this.isLoggedIn$ = this.authService.isLoggedIn;
     }
     sidebarOpen() {
         const toggleButton = this.toggleButton;
@@ -69,6 +69,6 @@ export class NavbarComponent implements OnInit{
 
     isLoggedIn$: Observable<boolean>;
     onLogout(){
-        this.authService.logout();                    
+        // this.authService.logout();                    
       }
 }
