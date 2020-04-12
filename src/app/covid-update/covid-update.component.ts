@@ -51,7 +51,6 @@ export class CovidUpdateComponent implements OnInit {
   updateCovid(idCovidCity: number, cityName:string, caseByCity:number, deathsByCity:number, recovered:number){
     this.covidService.getUpdate(idCovidCity, cityName, caseByCity, deathsByCity, recovered).subscribe(
       data=>console.log(data), error=> console.log(error));
-    // this.covid = new Covid();
     this.gotoList();
   }
 
@@ -67,13 +66,11 @@ export class CovidUpdateComponent implements OnInit {
   updateCov(data:Covid){
     this.route.queryParams
       .subscribe(params => {
-        // console.log(params.id);
         this.pil.idCovidCity=params.id 
         this.pil.cityName=data.cityName
         this.pil.caseByCity=data.caseByCity
         this.pil.deathsByCity=data.deathsByCity
         this.pil.recovered=data.recovered
-        // console.log(this.pil);
         this.updateCovid(params.id, data.cityName, data.caseByCity, data.deathsByCity, data.recovered);
         this.insertList();
     });

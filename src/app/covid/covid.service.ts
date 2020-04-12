@@ -8,7 +8,7 @@ import { Covid } from './covid'
   providedIn: 'root'
 })
 export class CovidService {
-  private baseUrl='http://6a30f855.ngrok.io/'
+  private baseUrl='http://localhost:8080/'
 
   constructor(private http: HttpClient) { }
 

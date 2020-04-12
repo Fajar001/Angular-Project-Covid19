@@ -1,7 +1,15 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
+            <h1>Website Data Covid</h1>
+            <ol>
+                <li>Aldhy Putra Mahardika (Front End)</li>
+                <li>Fajar Setiawan (Back End)</li>
+            </ol>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
                 <lbd-chart
                   [title]="'Email Statistics'"
                   [subtitle]="'Last Campaign Performance'"
@@ -12,22 +20,6 @@
                   [withHr]="true"
                   [footerIconClass]="'fa fa-clock-o'"
                   [footerText]="'Campaign sent 2 days ago'">
-                </lbd-chart>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <lbd-chart
-                  [title]="'2014 Sales'"
-                  [subtitle]="'All products including Taxes'"
-                  [chartType]="activityChartType"
-                  [chartData]="activityChartData"
-                  [chartOptions]="activityChartOptions"
-                  [chartResponsive]="activityChartResponsive"
-                  [legendItems]="activityChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-check'"
-                  [footerText]="'Data information certified'">
                 </lbd-chart>
             </div>
         </div>
